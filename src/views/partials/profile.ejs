@@ -1,0 +1,27 @@
+<%- include('./head') %>
+<%- include('./navbar') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 p4">
+            <% if(image){ %>
+                <div class="card m-4">
+                    <div class="card-header text-center">
+                        <img src="<%= image.path %>" alt="<%= image.filename %>" class="card-img-top">
+                        <h2><%= image.title %></h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text">
+                            <%= image.description %>
+                            <br>
+                            <%= format(image.created_at) %>
+                        </div>
+                    </div>
+                <div class="card-footer">
+                    <a href="/image/delete/<%= image._id %>" class="btn btn-danger btn-block">DELETE</a>
+                </div>
+                </div>
+            <%}%>
+        </div>
+    </div>
+</div>
